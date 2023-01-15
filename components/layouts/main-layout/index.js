@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import React from 'react';
+import MainFooter from './footer';
 import MainNavbar from './navbar';
 
 function MainLayout({ children, title }) {
@@ -21,7 +22,9 @@ function MainLayout({ children, title }) {
           {children}
         </section>
 
-        <footer className='!h-[100px]' />
+        <footer className='!h-[100px]'>
+          <MainFooter />
+        </footer>
       </main>
     </>
   );
