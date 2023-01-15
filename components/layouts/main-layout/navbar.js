@@ -17,7 +17,7 @@ function MainNavbar() {
   }, [isDesktop]);
 
   return (
-    <Navbar className='mx-auto max-w-screen-xl py-2 px-4 md:px-8 md:py-4'>
+    <Navbar className='sticky top-0 z-30 mx-auto max-w-screen-xl py-2 px-4 md:px-8 md:py-4'>
       <div className='container mx-auto flex items-center justify-between text-blue-gray-900'>
         {/* app logo */}
         <Link href='/'>

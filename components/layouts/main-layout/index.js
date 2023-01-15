@@ -14,15 +14,15 @@ function MainLayout({ children, title }) {
       </Head>
 
       <main className='min-h-screen w-full'>
-        <header className='!h-[100px]'>
+        <header className='h-[100px]'>
           <MainNavbar />
         </header>
 
-        <section className='!min-h-[calc(100vh-200px)] mx-auto w-full md:w-5/6 md:px-0'>
+        <section className='min-h-[calc(100vh-200px)] mx-auto w-full relative md:w-5/6 md:px-0'>
           {children}
         </section>
 
-        <footer className='!h-[100px]'>
+        <footer className='h-[100px]'>
           <MainFooter />
         </footer>
       </main>

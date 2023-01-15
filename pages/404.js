@@ -39,7 +39,7 @@ function Error() {
 
         <Link className='mt-10' href='/'>
           <Button
-            className='capitalize font-bold'
+            className='uppercase font-bold'
             size={isDesktop ? 'lg' : 'md'}
             variant='gradient'
           >

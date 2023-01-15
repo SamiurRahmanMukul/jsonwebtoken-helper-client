@@ -32,3 +32,15 @@ a {
   border-radius: 6;
   -webkit-appearance: none;
 }
+
+/* jwt client components design start */
+
+.tab-panel-container {
+  @apply bg-bg-white h-full min-h-[calc(100vh-300px)] border-[2px] rounded-md;
+}
+
+.tab-panel-title {
+  @apply text-center font-title-font font-semibold py-4 uppercase underline underline-offset-2;
+}
+
+/* jwt client components design end */
