@@ -18,8 +18,8 @@ module.exports = withMT({
     },
     extend: {
       colors: {
-        'color-primary': '#3949ab',
-        'color-secondary': '#5c6bc0',
+        'color-primary': '#039be5',
+        'color-secondary': '#29b6f6',
         'color-agent': '#d81b60',
         'color-success': '#43a047',
         'color-warning': '#fb8c00',

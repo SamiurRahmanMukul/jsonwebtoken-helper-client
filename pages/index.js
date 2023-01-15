@@ -1,9 +1,16 @@
+import { Typography } from '@material-tailwind/react';
+import MainLayout from '../components/layouts/main-layout';
+
 export default function Home() {
   return (
-    <div>
-      <h1 className='text-center text-h2-font-size font-title-font font-medium mt-4'>
-        Hello World!
-      </h1>
-    </div>
+    <MainLayout title='JWT Client ― Home'>
+      <Typography
+        className='text-center text-color-primary font-title-font'
+        variant='h2'
+        textGradient
+      >
+        JWT ― Helper Client
+      </Typography>
+    </MainLayout>
   );
 }
