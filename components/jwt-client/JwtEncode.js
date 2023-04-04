@@ -2,13 +2,10 @@ import { EyeInvisibleOutlined, EyeOutlined, LoadingOutlined } from '@ant-design/
 import {
   Alert, Button, Input, Textarea, Typography
 } from '@material-tailwind/react';
-import getConfig from 'next/config';
 import React, { useState } from 'react';
 import useMediaQuery from '../../hooks/useMediaQuery';
 import useTimeout from '../../hooks/useTimeout';
 import isEmptyObject from '../../lib/isEmptyObject';
-
-const { publicRuntimeConfig } = getConfig();
 
 function JwtEncode() {
   const isDesktop = useMediaQuery('(min-width: 768px)');
@@ -44,13 +41,13 @@ function JwtEncode() {
       }));
     } else {
       setLoading(true);
-      fetch(`${publicRuntimeConfig.APP_BASE_URL}/api/v1/jwt-encode`, {
+      fetch('/api/v1/jwt-encode', {
         method: 'POST',
         body: JSON.stringify({ secret: secretKey.state, data: payload.state }),
       }).then((response) => response.json())
         .then((data) => {
           setLoading(false);
-          if (data?.resultCode === 0 && data?.title === 'SUCCESS') {
+          if (data?.result_code === 0 && data?.title === 'SUCCESS') {
             setToken(data?.data?.token);
             setAlert((prevState) => ({
               ...prevState,
@@ -132,7 +129,7 @@ function JwtEncode() {
             )}
         />
 
-        {/* select option payload type */}
+        {/* input field payload */}
         <Textarea
           className='text-[14px]'
           label='Token Payload'
@@ -146,7 +143,7 @@ function JwtEncode() {
 
         {/* token generate button */}
         <Button
-          className={isDesktop && 'w-[200px]'}
+          className={isDesktop ? 'w-[200px]' : 'w-full'}
           fullWidth={!isDesktop}
           variant='gradient'
           color='blue'
@@ -157,7 +154,7 @@ function JwtEncode() {
           {loading ? (<LoadingOutlined />) : 'Create JWT Token'}
         </Button>
 
-        {/* created token view textarea */}
+        {/* created token view text-area */}
         {token && (
           <div className='!mt-10'>
             <Textarea

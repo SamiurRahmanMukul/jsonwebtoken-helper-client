@@ -8,16 +8,16 @@ const jwtEncode = (req, res) => {
     const signToken = jwt.sign(data, secret, { algorithm: 'HS256' });
 
     res.status(200).json({
-      resultCode: 0,
+      result_code: 0,
       title: 'SUCCESS',
-      message: 'Json web token creation successful',
+      message: 'Json web token create successful',
       data: { token: signToken }
     });
   } catch (err) {
     res.status(500).json({
-      resultCode: 1,
+      result_code: 1,
       title: 'FAILED',
-      message: 'Json web token creation failed',
+      message: 'Json web token create failed',
       error: err
     });
   }
